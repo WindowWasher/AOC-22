@@ -3,10 +3,6 @@ require 'set'
 input = File.readlines('input.txt')
 
 def char_pri(char)
-  # a-z 1-26   sub 96
-  # A-Z 27-52  sub 38
-  #
-
   return char.ord - 96 if char.ord > 96
 
   char.ord - 38
