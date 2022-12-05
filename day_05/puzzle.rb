@@ -1,6 +1,7 @@
 # My initial stack. Also, cleaned up the input file to make it easier to parse.
 #
-# [P]     [L]         [T] [L]     [M] [G]     [G]     [S]
+# [P]     [L]         [T]
+# [L]     [M] [G]     [G]     [S]
 # [M]     [Q] [W]     [H] [R] [G]
 # [N]     [F] [M]     [D] [V] [R] [N]
 # [W]     [G] [Q] [P] [J] [F] [M] [C]
@@ -32,7 +33,6 @@ stacks = {
 # res = []
 # stacks.each { |_i, stack| res << stack.pop }
 # puts res.compact.join('')
-
 
 # Part 2
 input.map do |line|
