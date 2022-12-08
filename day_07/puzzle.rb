@@ -8,16 +8,13 @@ dir_stack = []
 input.map do |line|
   if line.include?('$ cd ') && line.strip != '$ cd ..'
     dir_stack << line.split('$ cd ')[1].strip
-    next
   elsif line.strip == '$ cd ..'
     dir_size = file_system[dir_stack.join(',')]
     dir_stack.pop
     file_system[dir_stack.join(',')] += dir_size
-    next
+  elsif line.strip != '$ ls'
+    file_system[dir_stack.join(',')] += Integer(line.split.first) unless line.include?('dir ')
   end
-  next if line.strip == '$ ls'
-
-  file_system[dir_stack.join(',')] += Integer(line.split.first) unless line.include?('dir ')
 end
 
 # Unwind the rest of the stack
